@@ -1420,28 +1420,28 @@ function Library:Create(options)
 										KeySystem.CorrectKey = true
 
 										Library:ForceNotify({
-											Name = "KeySystem",
-											Text = "Correct key!",
-											Icon = "rbxassetid://11401835376",
+											Name = "wayne.lua",
+											Text = "entered correct key",
+											Icon = "rbxassetid://7743875263",
 											Duration = 3,
 										})
 									else
 										KeySystem.Attempts = KeySystem.Attempts - 1
 
 										Library:ForceNotify({
-											Name = "KeySystem",
-											Text = "Incorrect key! You still have "
+											Name = "wayne.lua",
+											Text = "entered incorrect key, attemps left: "
 												.. tostring(KeySystem.Attempts)
 												.. " attempts left!",
 											Icon = "rbxassetid://11401835376",
-											Duration = 3,
+											Duration = 10,
 										})
 									end
 
 									KeySystem["a4"]["Text"] = ""
 
 									if KeySystem.Attempts == 0 then
-										game.Players.LocalPlayer:Kick("Too many failed attempts")
+										game.Players.LocalPlayer:Kick("too many failed attempts")
 									end
 
 									if KeySystem.KeyTextboxHover then
@@ -1621,8 +1621,8 @@ function Library:Create(options)
 								Library:PlaySound(LibSettings.ClickSound)
 								task.spawn(function()
 									Library:ForceNotify({
-										Name = "Discord",
-										Text = "Copied the discord link to clipboard!",
+										Name = "wayne.lua",
+										Text = "copied key link into clickboard",
 										Icon = "rbxassetid://11401835376",
 										Duration = 3,
 									})
